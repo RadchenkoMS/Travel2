@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{%block content%}
+<h6>Створення локомотиву</h6>
+<br>
+{% include 'form.html' with button_name='Зберегти' %}
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <a href="{% url 'trains:home' %}">
+            <button type="button" class="btn btn-light">Назад </button></a>
+
+    </div>
+</div>
+{%endblock%}

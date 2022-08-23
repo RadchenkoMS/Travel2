@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{%block content%}
+<h6>Редакування міста</h6>
+<br>
+{%include 'form.html' with button_name='Редагувати'%}
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <a href="{% url 'cities:home' %}">
+            <button type="button" class="btn btn-light">Назад </button></a>
+
+    </div>
+</div>
+{%endblock%}

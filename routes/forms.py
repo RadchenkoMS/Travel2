@@ -1,0 +1,67 @@
+from django import forms
+
+from cities.models import City
+
+from routes.models import Route
+
+from trains.models import Train
+
+
+class RouteForm(forms.Form):
+
+    from_town = forms.ModelChoiceField(
+        label='Місто відбуття',
+        queryset=City.objects.all(),
+        widget=forms.Select(
+            attrs={
+                'class': 'form-control js-example-basic-single'}))
+
+    to_town = forms.ModelChoiceField(
+        label='Місто прибуття',
+        queryset=City.objects.all(),
+        widget=forms.Select(
+            attrs={
+                'class': 'form-control js-example-basic-single'}))
+
+    travel_time = forms.IntegerField(label="Час", widget=forms.NumberInput(
+        attrs={'class': 'form-control', 'placeholder': 'Введіть ваш час'}))
+
+    towns = forms.ModelMultipleChoiceField(
+        label='Через міста',
+        queryset=City.objects.all(),
+        required=False,
+        widget=forms.SelectMultiple(
+            attrs={
+                'class': 'form-control js-example-basic-multiple'}))
+
+    class Meta:
+        model = Route
+        fields = ('__all__')
+
+
+class RouteModelForm(forms.ModelForm):
+    name = forms.CharField(label='Назва маршруту', widget=forms.TextInput(
+        attrs={
+            'class': 'form-control',
+            'placeholder': 'Введіть назву маршруту'}))
+
+    from_town = forms.ModelChoiceField(
+        queryset=City.objects.all(),
+        widget=forms.HiddenInput())
+
+    to_town = forms.ModelChoiceField(
+        queryset=City.objects.all(),
+        widget=forms.HiddenInput())
+
+    travel_time = forms.IntegerField(widget=forms.HiddenInput())
+
+    trains = forms.ModelMultipleChoiceField(
+        queryset=Train.objects.all(),
+        required=False,
+        widget=forms.SelectMultiple(
+            attrs={
+                'class': 'form-control d-none'}))
+
+    class Meta:
+        model = Route
+        fields = ('__all__')

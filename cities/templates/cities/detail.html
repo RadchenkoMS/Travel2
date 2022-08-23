@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{%block content%}
+<div class="row">
+    <div class="col-md">
+         <div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+        <h4>{{object.name}}</h4></li></ul>
+</div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <a href="{% url 'cities:home' %}">
+            <button type="button" class="btn btn-light">Назад </button></a>
+
+    </div>
+</div>
+{%endblock%}
