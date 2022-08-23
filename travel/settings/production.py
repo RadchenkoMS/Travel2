@@ -17,6 +17,7 @@ DB_NAME = os.getenv('DB_NAME')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 DB_HOST = os.getenv('DB_HOST')
 DB_USER = os.getenv('DB_USER')
+#SECRET_KEY = os.getenv('SECRET_KEY')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -30,7 +31,7 @@ SECRET_KEY = 'django-insecure-$=mvx01d0_vs*)ennc+_thkbdf(8m25mgl^qtmcx@t)=iy%*u3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['betsinside.herokuapp.com/']
 
 
 # Application definition
