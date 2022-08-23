@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-$=mvx01d0_vs*)ennc+_thkbdf(8m25mgl^qtmcx@t)=iy%*u3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['betsinside.herokuapp.com/']
+ALLOWED_HOSTS = ['betsinside.herokuapp.com']
 
 
 # Application definition
